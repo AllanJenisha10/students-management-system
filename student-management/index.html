@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in | Student Management System</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="login">
+  <div class="board">
+    <h1>Attendance and marks, <mark>marked</mark> in one place.</h1>
+    <p>Admins keep the register. Students check their own record any time.</p>
+  </div>
+  <div class="formside">
+    <form id="f">
+      <h2>Sign in</h2>
+      <label>Username<input name="username" autocomplete="username" required autofocus></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn" style="width:100%">Sign in</button>
+      <p class="hint">Students: your first username and password are both your roll number.</p>
+    </form>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+<script src="assets/js/app.js"></script>
+<script>
+$('#f').onsubmit = async e => {
+  e.preventDefault();
+  try {
+    const r = await api('api/login.php', 'POST', Object.fromEntries(new FormData(e.target)));
+    location = r.role === 'admin' ? 'admin.html' : 'student.html';
+  } catch (err) { toast(err.message, true); }
+};
+</script>
+</body>
+</html>

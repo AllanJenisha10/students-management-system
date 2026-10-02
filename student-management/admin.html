@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | Student Management System</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="app">
+  <nav class="side">
+    <h3>Student Register</h3>
+    <button data-tab="students" class="on">Students</button>
+    <button data-tab="courses">Courses</button>
+    <button data-tab="attendance">Attendance</button>
+    <button data-tab="marks">Marks</button>
+    <button class="out" onclick="logout()">Sign out</button>
+  </nav>
+  <main>
+    <section id="students">
+      <h2>Students</h2>
+      <div class="bar">
+        <label>Search<input id="search" placeholder="Name or roll number"></label>
+        <button class="btn alt" id="addStu">Add student</button>
+      </div>
+      <div class="wrap"><table>
+        <thead><tr><th>Roll no</th><th>Name</th><th>Department</th><th>Year</th><th>Email</th><th></th></tr></thead>
+        <tbody id="stuBody"></tbody>
+      </table></div>
+    </section>
+
+    <section id="courses" hidden>
+      <h2>Courses</h2>
+      <form class="bar" id="courseForm">
+        <label>Course code<input name="course_code" required></label>
+        <label>Course name<input name="course_name" required></label>
+        <button class="btn alt">Add course</button>
+      </form>
+      <div class="wrap"><table>
+        <thead><tr><th>Code</th><th>Name</th><th></th></tr></thead>
+        <tbody id="courseBody"></tbody>
+      </table></div>
+    </section>
+
+    <section id="attendance" hidden>
+      <h2>Attendance</h2>
+      <div class="bar">
+        <label>Course<select id="attCourse"></select></label>
+        <label>Date<input type="date" id="attDate"></label>
+        <button class="btn" id="attLoad">Load students</button>
+      </div>
+      <div class="wrap"><table>
+        <thead><tr><th>Roll no</th><th>Name</th><th>Status</th></tr></thead>
+        <tbody id="attBody"><tr><td colspan="3" class="empty">Choose a course and date, then load students.</td></tr></tbody>
+      </table></div>
+      <p><button class="btn alt" id="attSave" hidden>Save attendance</button></p>
+    </section>
+
+    <section id="marks" hidden>
+      <h2>Marks</h2>
+      <form class="bar" id="markForm">
+        <label>Student<select name="student_id" id="mkStudent" required></select></label>
+        <label>Course<select name="course_id" id="mkCourse" required></select></label>
+        <label>Exam<select name="exam_type"><option>Internal 1</option><option>Internal 2</option><option>Model exam</option><option>Semester exam</option></select></label>
+        <label>Score (0-100)<input name="score" type="number" min="0" max="100" step="0.01" required></label>
+        <button class="btn alt">Save marks</button>
+      </form>
+      <div class="wrap"><table>
+        <thead><tr><th>Roll no</th><th>Name</th><th>Course</th><th>Exam</th><th>Score</th><th></th></tr></thead>
+        <tbody id="markBody"></tbody>
+      </table></div>
+    </section>
+  </main>
+</div>
+
+<dialog id="dlg">
+  <form id="stuForm">
+    <h3 id="dlgTitle" style="margin-bottom:1rem">Add student</h3>
+    <input type="hidden" name="id">
+    <label>Roll number<input name="roll_no" required></label>
+    <label>Full name<input name="name" required></label>
+    <label>Email<input name="email" type="email"></label>
+    <label>Phone<input name="phone" inputmode="tel"></label>
+    <label>Department<input name="department" value="Information Science and Engineering"></label>
+    <label>Year<select name="year"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+    <div class="row"><button type="button" class="btn ghost" id="dlgCancel">Cancel</button><button class="btn">Save student</button></div>
+  </form>
+</dialog>
+<div id="toast" role="status"></div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
