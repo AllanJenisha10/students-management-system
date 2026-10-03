@@ -1,2 +1,11 @@
+
+# Private configuration
+.env
+.env.*
+/config/db.php
+
+# Editor and operating system files
 .vscode/
-*.log
+.idea/
+.DS_Store
+Thumbs.db

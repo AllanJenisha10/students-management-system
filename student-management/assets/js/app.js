@@ -29,8 +29,13 @@ function toast(msg, bad) {
 }
 
 async function logout() {
-  await api('api/logout.php');
-  location = 'index.html';
+    try {
+        await api('api/logout.php', 'POST');
+    } catch (e) {
+        console.error('Logout request failed:', e);
+    } finally {
+        location.href = 'index.html';
+    }
 }
 
 // Send people to the right page if their role does not match.
