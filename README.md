@@ -253,16 +253,21 @@ Adjust the URL according to the actual folder name and application entry point.
 5. Check attendance records and examination marks.
 6. Log out when you finish.
 
-### Example Login Information
+### Demo Login Usernames
 
-| Account Type | Username | Password |
+The following sample accounts are intended for testing. Passwords are intentionally not published in this public README.
+
+| Account Type | Name | Username |
 |---|---|---|
-| Administrator | Configured admin username | Your configured password |
-| Student | Assigned student username | The password configured for that account |
+| Administrator | Admin | `admin` |
+| Student | Jeni | `1` |
+| Student | Sam | `2` |
+| Student | Ben | `3` |
+| Student | Student 4 | `4` |
 
-These are account formats, not public demo credentials. Actual login details depend on the accounts configured in the database.
+Use the demo passwords shared privately by the project owner, and confirm that each account is configured in the database before testing.
 
-**Security note:** Never publish actual passwords, private student records, or production database credentials in this README.
+**Security note:** Do not publish working passwords, production database credentials, or real student records in a public repository. If these are publicly accessible demo accounts, use non-sensitive sample data and change any default passwords before using the application with real information.
 
 ---
 
