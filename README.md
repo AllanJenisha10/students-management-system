@@ -257,13 +257,13 @@ Adjust the URL according to the actual folder name and application entry point.
 
 The following sample accounts are intended for testing. Passwords are intentionally not published in this public README.
 
-| Account Type | Name | Username |
-|---|---|---|
-| Administrator | Admin | `admin` |
-| Student | Jeni | `1` |
-| Student | Sam | `2` |
-| Student | Ben | `3` |
-| Student | Student 4 | `4` |
+| Account Type | Name | Username | Password that I Used |
+|---|---|---|---|
+| Administrator | Admin | `admin` | 'jeni10' |
+| Student | Jeni | `1` | 'jeni' |
+| Student | Sam | `2` | 'sam' |
+| Student | Ben | `3` | '3' |
+| Student | Jeba | `4` | '4' |
 
 Use the demo passwords shared privately by the project owner, and confirm that each account is configured in the database before testing.
 
