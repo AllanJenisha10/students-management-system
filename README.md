@@ -269,6 +269,14 @@ Use the demo passwords shared privately by the project owner, and confirm that e
 
 **Security note:** Do not publish working passwords, production database credentials, or real student records in a public repository. If these are publicly accessible demo accounts, use non-sensitive sample data and change any default passwords before using the application with real information.
 
+### Reason for Different Student Passwords
+
+Initially, Jeni and Sam were assigned separate passwords during login troubleshooting. Their passwords were not set to match their roll numbers. Ben and Student 4 use their roll numbers as passwords.
+
+To maintain consistency, all students should use their roll numbers as passwords if this is the intended login policy. Jeni's and Sam's passwords must be updated accordingly in the database.
+
+**Note:** The passwords shown in the README should match the actual passwords configured in the application.
+
 ---
 
 ## 🔒 Security Considerations
